@@ -1432,10 +1432,8 @@ class Image(object):
             elif isImageType(mask):
                 size = mask.size
             else:
-                # FIXME: use self.size here?
-                raise ValueError(
-                    "cannot determine region size; use 4-item box"
-                    )
+                size = self.size
+
             box += (box[0]+size[0], box[1]+size[1])
 
         if isStringType(im):
